@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Srednia cena za metr</title>
+    <meta name="description" content="Serwis zwraca sredna cene mieszkania / metr"/>
+    <meta name="keywords" content="dom, mieszkanie, wycena, nieruchomosci, serdnia cena"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <style>
+
+	body {
+  background-image: url('wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+	#container
+	{
+	"background-image: url('wallpaper.jpg');
+		width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		font-family: 'Lato', sans-serif;
+
+	}
+	#logo
+	{
+		background-color: black;
+		color: white;
+		text-align: center;
+		padding: 15px;
+		font-size: 20px;
+
+	}
+	#nav
+	{
+		float: left;
+		background-color: lightgray;
+		width: 120px;
+		min-height: 620px;
+		padding: 10px;
+	}
+	#content
+	{
+		float: left;
+		padding: 20px;
+		width: 640px;
+	}
+	#ad
+	{
+		float: left;
+		width: 160px;
+		min-height: 620px;
+		padding: 10px;
+		background-color: lightgray;
+	}
+	#footer
+	{
+		clear: both;
+		background-color: black;
+		color: white;
+		text-align: center;
+		padding: 20px;
+	}
+
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <center>
+        <form th:action="@{/add-service}" th:object="${newService}" method="post">
+            <h3> Miasto </h3>
+            <select th:field="*{city}">
+                <option th:value="'WARSZAWA'" th:text="WARSZAWA"></option>
+                <option th:value="'LODZ'" th:text="ŁÓDŹ"></option>
+                <option th:value="'KRAKOW'" th:text="KRAKÓW"></option>
+            </select>
+            <h3> Powierzchnia</h3>
+            <input type="number" min="18" max="150" style="width: 4em;" autocomplete="off" step = " 0,01 "
+                   th:field="*{area}"></h3>
+
+            <p><input type="submit" value="Szukaj"></p>
+        </form>
+    </center>
+</div>
+
+</body>
+</html>
