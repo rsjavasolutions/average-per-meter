@@ -3,54 +3,52 @@
 <head>
     <meta charset="utf-8"/>
     <title>Srednia cena za metr</title>
-    <meta name="description" content="Serwis zwraca sredna cene mieszkania / metr"/>
+    <meta name="description" content="Srednia cena za m2 mieszkania"/>
     <meta name="keywords" content="dom, mieszkanie, wycena, nieruchomosci, serdnia cena"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
     <style>
-
-	body
+    body
+    {
+     background-image: url('wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    #container
 	{
-	font-family: 'Lato', sans-serif;
-	}
-
-	#container
-	{
-		width: 1000px;
+    width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 		font-family: 'Lato', sans-serif;
-
-	}
+    }
 	#logo
 	{
 		background-color: black;
 		color: white;
 		text-align: center;
-		padding: 15px;
-		font-size: 20px;
-
+		padding: 5px;
+		font-size: 15px;
 	}
 	#nav
 	{
 		float: left;
 		background-color: lightgray;
-		width: 120px;
-		min-height: 620px;
-		padding: 10px;
+		width: 0px;
+		min-height: 450px;
+		padding: 0px;
 	}
 	#content
 	{
 		float: left;
 		padding: 20px;
-		width: 640px;
+		width: 920px;
 	}
 	#ad
 	{
 		float: left;
-		width: 160px;
-		min-height: 620px;
-		padding: 10px;
+		width: 0px;
+		min-height: 450px;
+		padding: 0px;
 		background-color: lightgray;
 	}
 	#footer
@@ -61,16 +59,28 @@
 		text-align: center;
 		padding: 20px;
 	}
-
-    </style>
+     </style>
 </head>
-
 <body>
 <div id="container">
-    <center>
-        <h2>Średnia cena: <a th:text="${showPrice}"/></h2>
-        <a href="/">Powrót do strony głównej</a>
-    </center>
+    <div id="logo">
+        <h1>Średnia cena za m2 mieszkania</h1>
+    </div>
+    <div id="nav">
+        <br/>
+    </div>
+    <div id="content">
+        <center>
+                <h2>Średnia cena: <a th:text="${showPrice}"/>&nbspPLN</h2>
+                <a href="/">Powrót do strony głównej</a>
+        </center>
+    </div>
+    <div id="ad">
+        <br>
+    </div>
+    <div id="footer">
+        RS Java Solutions - All rights reserved
+    </div>
 </div>
 </body>
 </html>

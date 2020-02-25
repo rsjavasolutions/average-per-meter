@@ -15,11 +15,9 @@ public class CityService {
 
     private String link;
 
-
     public CityService(String link) {
         this.link = link;
     }
-
 
     private String numberOfElements() {
         Elements elements2 = null;
@@ -32,13 +30,13 @@ public class CityService {
         return elements2.get(0).text();
     }
 
-    public int numberOfElementsInteger() {
+    private int numberOfElementsInteger() {
         String number = numberOfElements().replace(" ", "");
         String number2 = number.substring(number.indexOf(":") + 1);
         return Integer.valueOf(number2);
     }
 
-    public int numberOfPages() {
+    private int numberOfPages() {
         if (numberOfElementsInteger() <= 24) {
             return 1;
         } else {
@@ -46,7 +44,7 @@ public class CityService {
         }
     }
 
-    public List<Elements> elementsFromEachPage() {
+    private List<Elements> elementsFromEachPage() {
         Elements elements = null;
         List<Elements> allElements = new ArrayList<>();
         Document document = null;
@@ -64,7 +62,7 @@ public class CityService {
         } else return null;
     }
 
-    public List<String> allElementsOnEachPage() {
+    private List<String> allElementsOnEachPage() {
         List<String> stringList = new ArrayList<>();
         for (Elements elements : elementsFromEachPage()) {
             for (Element e : elements) {
@@ -74,7 +72,7 @@ public class CityService {
         return stringList;
     }
 
-    public List<Double> doublePrices() {
+    private List<Double> doublePrices() {
         return allElementsOnEachPage().stream()
                 .map(x -> x.replace(" ", ""))
                 .map(x -> x.substring(0, x.indexOf("z")))

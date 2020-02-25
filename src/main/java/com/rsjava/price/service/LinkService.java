@@ -47,8 +47,14 @@ public class LinkService {
                     number + "&search%5Bdescription%5D=1&search%" +
                     "5Bregion_id%5D=6&search%5Bsubregion_id%5D=410" +
                     "&search%5Bcity_id%5D=38&nrAdsPerPage=24";
+        } else if (city.equalsIgnoreCase("WROCLAW")){
+            return "https://www.otodom.pl/sprzedaz/mieszkanie/" +
+                    "wroclaw/?search%5Bfilter_float_m%3Afrom%5D=" +
+                    number + "&search%5Bfilter_float_m%3Ato%5D=" +
+                    number + "&search%5Bdescription%5D=1&search%5" +
+                    "Bregion_id%5D=1&search%5Bsubregion_id%5D=381" +
+                    "&search%5Bcity_id%5D=39&nrAdsPerPage=24";
         }
         return null;
     }
-
 }
