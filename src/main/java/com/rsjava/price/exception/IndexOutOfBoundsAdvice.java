@@ -13,6 +13,6 @@ public class IndexOutOfBoundsAdvice{
     @ExceptionHandler(IndexOutOfBoundsException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public String indexOutOfBoundsHandler(IndexOutOfBoundsException ex){
-        return "No results change search criteria";
+        return "No results, change search criteria";
     }
 }
