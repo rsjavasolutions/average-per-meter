@@ -13,18 +13,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class FrontEndController {
 
+    @Autowired
     private Flat flat;
 
     @GetMapping("/")
     public String geCityService(ModelMap map) {
-        map.put("newService", new Flat());
+        map.put("newService", flat);
         return "index";
     }
 
     @GetMapping("service")
     String getCalc(ModelMap map) {
 
-        LinkService linkService = new LinkService(flat.getCity(),flat.getArea());
+        LinkService linkService = new LinkService(flat.getCity(), flat.getArea());
         CityService cityService = new CityService(linkService.getLink());
 
         map.put("showPrice", cityService.getAverage());
