@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class FrontEndController {
 
-    @Autowired
     private Flat flat;
+
+    @Autowired
+    public FrontEndController(Flat flat) {
+        this.flat = flat;
+    }
 
     @GetMapping("/")
     public String geCityService(ModelMap map) {

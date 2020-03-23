@@ -82,8 +82,8 @@ public class CityService {
 
     public double getAverage() {
         Double sum = 0.0;
-        for (Double aDouble : doublePrices()) {
-            sum += aDouble;
+        for (Double price : doublePrices()) {
+            sum += price;
         }
         return rounding(sum / doublePrices().size());
     }
