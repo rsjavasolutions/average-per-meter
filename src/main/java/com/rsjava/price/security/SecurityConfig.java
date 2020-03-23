@@ -1,6 +1,7 @@
 package com.rsjava.price.security;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -9,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -28,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/").permitAll()
                 .antMatchers(HttpMethod.POST, "/add-service").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "service").hasRole("ADMIN")
                 .and()
                 .formLogin().permitAll()
                 .and()
