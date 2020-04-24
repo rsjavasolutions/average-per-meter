@@ -61,6 +61,15 @@ public class LinkService {
                     + number + "&search%5Bdescription%5D=1&search%" +
                     "5Bregion_id%5D=15&search%5Bsubregion_id%5D=462" +
                     "&search%5Bcity_id%5D=1&nrAdsPerPage=24";
-        }  return null;
+        }  else if (city.equalsIgnoreCase("SKIERNIEWICE")){
+            return "https://www.otodom.pl/sprzedaz/mieszkanie/" +
+                    "skierniewice/?search%5Bfilter_float_m%3Afrom%5D=" +
+                    + number + "&search%5Bfilter_float_m%3Ato%5D=" +
+                    + number + "&search%5Bregion_id%5D=5&search%" +
+                    "5Bsubregion_id%5D=406&search%5Bcity_id%5D=163" +
+                    "&nrAdsPerPage=24";
+        }
+
+        return null;
     }
 }
